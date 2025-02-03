@@ -1,0 +1,181 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+  }
+  
+  .header {
+    text-align: center;
+    background:linear-gradient(to left,#1abc9c,#3498db);
+    color: #fff;
+    padding: 20px 10px;
+  }
+  
+  .main-content {
+    padding: 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Card Styles */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .card {
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+  }
+  
+  .card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.5s;
+  }
+  
+  .card-front {
+    background: #fff;
+    border: 1px solid #ddd;
+  }
+  
+  .card-front img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+  }
+  
+  .card-front h3 {
+    margin: 10px 0;
+  }
+  
+  .card-back {
+    background: linear-gradient(to left,#1abc9c,#3498db);
+    color: #fff;
+    transform: rotateY(180deg);
+    padding: 10px;
+  }
+  
+  .card:hover .card-front {
+    transform: rotateY(180deg);
+  }
+  
+  .card:hover .card-back {
+    transform: rotateY(360deg);
+  }
+  
+  /* Video Section */
+  .video-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .video-item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .video-item.reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .video-item iframe {
+    width: 300px;
+    height: 200px;
+    border: 0;
+  }
+  
+  .video-text {
+    max-width: 400px;
+  }
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+  }
+  
+  /* Responsive Styles */
+  
+  /* Large Screens (Desktop) */
+  @media (min-width: 1024px) {
+    .card-container {
+      justify-content: space-between;
+      gap: 30px;
+    }
+  
+    .video-item iframe {
+      width: 480px;
+      height: 270px;
+    }
+  
+    .video-text {
+      max-width: 500px;
+    }
+  }
+  
+  /* Medium Screens (Laptops and Tablets) */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .card-container {
+      gap: 20px;
+    }
+  
+    .card {
+      width: 250px;
+      height: 250px;
+    }
+  
+    .video-item iframe {
+      width: 400px;
+      height: 225px;
+    }
+  }
+  
+  /* Small Screens (Mobile) */
+  @media (max-width: 767px) {
+    .card-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      width: 90%;
+      height: 250px;
+    }
+  
+    .video-item {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .video-item iframe {
+      width: 100%;
+      height: 200px;
+    }
+  
+    .video-text {
+      max-width: 100%;
+    }
+  }
+  
+   
